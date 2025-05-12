@@ -1,0 +1,26 @@
+ <!-- Design an HTML page to shown that, when this page is loaded it must check the cookies status of user's browser and display a message 
+ accordingly in the popup box i.e., if cookies are enabled, show: "Cookies are enabled" and if not then show: "Cookies are disabled". 
+ Implement the event "On load" using HTML DOM events. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Check</title>
+    <script>
+        // Function to check cookie status
+        function checkCookies() {
+            if (navigator.cookieEnabled) {
+                alert("Cookies are enabled");
+            } else {
+                alert("Cookies are disabled");
+            }
+        }
+    </script>
+</head>
+<body onload="checkCookies()">
+    <h1>Cookie Status Checker</h1>
+    <p>This page checks if cookies are enabled in your browser.</p>
+</body>
+</html>

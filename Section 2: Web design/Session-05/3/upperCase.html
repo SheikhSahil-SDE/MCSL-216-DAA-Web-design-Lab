@@ -1,0 +1,25 @@
+<!-- 3. Whenever user input a text in the text box in any case (i.e. upper or lower case), automatically it 
+should be converted to uppercase. Design an HTML page implement above functionality using HTML DOM event 
+"onChange". "onChange". -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert to Uppercase</title>
+    <script>
+        // Function to convert text to uppercase
+        function convertToUppercase() {
+            const inputField = document.getElementById("textInput");
+            inputField.value = inputField.value.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    <h1>Convert Text to Uppercase</h1>
+    <p>Enter text in the box below. It will automatically convert to uppercase when you leave the field.</p>
+    <input type="text" id="textInput" onchange="convertToUppercase()" placeholder="Enter text here">
+</body>
+</html>

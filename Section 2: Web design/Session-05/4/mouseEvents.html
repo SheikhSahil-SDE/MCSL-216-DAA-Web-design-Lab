@@ -1,0 +1,59 @@
+<!-- 4. Design HTML page to implement HTML DOM events by changing an image on the following events: 
+onmouseoveronmouseout, onmousedown, and onmouseup Events. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Events Image Example</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Image Changes on Mouse Events</h2>
+    <p>Hover over, press, and release the mouse on the image to see the effects.</p>
+
+    <img 
+        id="eventImage" 
+        src="a474.jpg" 
+        onmouseover="changeImage('hover')" 
+        onmouseout="changeImage('default')" 
+        onmousedown="changeImage('click')" 
+        onmouseup="changeImage('release')"
+        alt="Interactive Image"
+    >
+
+    <script>
+        function changeImage(eventType) {
+            var img = document.getElementById("eventImage");
+            switch(eventType) {
+                case 'hover':
+                    img.src = "a12.jpg"; // Replace with your image URL
+                    break;
+                case 'click':
+                    img.src = "a70.jpg"; // Replace with your image URL
+                    break;
+                case 'release':
+                    img.src = "a329.jpg"; // Replace with your image URL
+                    break;
+                default:
+                    img.src = "a474.jpg"; // Replace with your image URL
+            }
+        }
+    </script>
+
+</body>
+</html>
