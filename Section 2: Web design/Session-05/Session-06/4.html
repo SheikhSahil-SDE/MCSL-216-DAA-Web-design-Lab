@@ -1,0 +1,59 @@
+<!-- 4. Using the DOM API, create a product details page which shows the 
+prices of a laptop and a cell phone. You may paragraph tag to wrap 
+these elements. When the user clicks on add button, you should able 
+to add TV with price details and when you click on delete button then 
+cell phone details will be deleted.  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .product {
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <div id="productList">
+        <p class="product" id="laptop">Laptop: Rs 50,000</p>
+        <p class="product" id="cellphone">Cell Phone: Rs 25,000</p>
+    </div>
+    <button onclick="addProduct()">Add TV</button>
+    <button onclick="deleteProduct()">Delete Cell Phone</button>
+
+    <script>
+        // Function to add TV details
+        function addProduct() {
+            const productList = document.getElementById('productList');
+            const tv = document.createElement('p');
+            tv.className = 'product';
+            tv.textContent = 'TV: Rs 40,000';
+            productList.appendChild(tv);
+        }
+
+        // Function to delete Cell Phone details
+        function deleteProduct() {
+            const cellphone = document.getElementById('cellphone');
+            if (cellphone) {
+                cellphone.remove();
+            }
+        }
+    </script>
+</body>
+</html>

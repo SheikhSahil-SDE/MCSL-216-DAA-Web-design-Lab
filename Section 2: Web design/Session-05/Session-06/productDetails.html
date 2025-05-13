@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product {
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <div id="productList">
+        <p class="product" id="laptop">Laptop: $1000</p>
+        <p class="product" id="cellphone">Cell Phone: $500</p>
+    </div>
+    <button onclick="addProduct()">Add TV</button>
+    <button onclick="deleteProduct()">Delete Cell Phone</button>
+
+    <script>
+        // Function to add TV details
+        function addProduct() {
+            const productList = document.getElementById('productList');
+            const tv = document.createElement('p');
+            tv.className = 'product';
+            tv.textContent = 'TV: $800';
+            productList.appendChild(tv);
+        }
+
+        // Function to delete Cell Phone details
+        function deleteProduct() {
+            const cellphone = document.getElementById('cellphone');
+            if (cellphone) {
+                cellphone.remove();
+            }
+        }
+    </script>
+</body>
+</html>
