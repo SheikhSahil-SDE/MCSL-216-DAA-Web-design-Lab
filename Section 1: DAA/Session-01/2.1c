@@ -1,0 +1,36 @@
+// Q2(ii) Apply a brute force method to implement the above polynomial expression(Q2(i)) 
+// and compare it with Horner’s method in terms of number of multiplication operations.
+
+#include <stdio.h>
+long long power(int x, int exp, int *mul_count) {
+   long long result = 1;
+   for (int i = 0; i < exp; i++) {
+       result *= x;
+       (*mul_count)++;
+   }
+   return result;
+}
+long long brute_force(int coefficients[], int n, int x, int *mul_count) {
+   long long result = 0;
+   *mul_count = 0;
+   for (int i = n; i >= 0; i--) {
+       long long term = power(x, i, mul_count); // Compute x^i
+       if (coefficients[n - i] != 0) {
+           term *= coefficients[n - i]; // Multiply by coefficient
+           (*mul_count)++;
+       }
+       result += term;
+   }
+   return result;
+}
+int main() {
+   int coefficients[] = {6, 5, 4, -3, 2, 8, -7}; // a_6 to a_0
+   int n = 6; // degree
+   int x = 3;
+   int mul_ops;
+   long long result = brute_force(coefficients, n, x, &mul_ops);
+   printf("Q2(ii):\n");
+   printf("Brute Force P(3) = %lld\n", result);
+   printf("Number of multiplications: %d\n", mul_ops);
+   return 0;
+}
